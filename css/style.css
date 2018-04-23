@@ -48,7 +48,7 @@ h2 {
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
-  margin: 50px 0; }
+  margin: 250px 0 50px 0; }
 
 h2:after {
   display: block;
@@ -68,7 +68,7 @@ h2:after {
   height: 0;
   visibility: hidden; }
 
-#navbar {
+nav {
   position: fixed;
   height: 50px;
   width: 100%;
@@ -77,11 +77,11 @@ h2:after {
   top: 0;
   left: 0;
   z-index: 1; }
-  #navbar ul {
+  nav ul {
     margin: 0 auto;
     width: 75%;
     text-align: center; }
-  #navbar li {
+  nav li {
     display: inline-block;
     margin: 0 25px;
     text-transform: uppercase;
@@ -90,14 +90,14 @@ h2:after {
     line-height: 50px;
     font-weight: 300;
     color: #f7f1e3; }
-    #navbar li span {
+    nav li span {
       font-weight: 800; }
-    #navbar li a:link,
-    #navbar li a:visited {
+    nav li a:link,
+    nav li a:visited {
       color: #f7f1e3;
       transition: all 0.2s ease-in-out; }
-    #navbar li a:active,
-    #navbar li a:hover {
+    nav li a:active,
+    nav li a:hover {
       color: #ffda79; }
 
 #about {
@@ -193,6 +193,31 @@ h2:after {
   background-size: cover;
   padding: 50px 0;
   color: #3d3d3d; }
+
+#clients {
+  width: 80%;
+  margin: 200px 10%; }
+
+q {
+  font-weight: 300;
+  font-style: italic;
+  font-size: 2rem;
+  text-align: justify;
+  color: #575757; }
+
+.client-name {
+  width: 80%;
+  margin: 25px auto;
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #7d7d7d; }
+
+footer {
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-align: center;
+  background: #ecddbb; }
 
 @media only screen and (max-width: 768px) {
   p {

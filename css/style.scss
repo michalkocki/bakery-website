@@ -62,7 +62,7 @@ h2 {
     letter-spacing: 2px;
     text-align: center;
     text-transform: uppercase;
-    margin: 50px 0;
+    margin: 250px 0 50px 0;
 }
 
 h2:after {
@@ -86,7 +86,7 @@ h2:after {
     visibility: hidden;
 }
 
-#navbar {
+nav {
     position: fixed;
     height: 50px;
     width: 100%;
@@ -236,6 +236,37 @@ h2:after {
     background-size: cover;
     padding: 50px 0;
     color: $dark;
+}
+
+#clients {
+    width: 80%;
+    margin: 200px 10%;
+}
+
+q {
+    font-weight: 300;
+    font-style: italic;
+    font-size: 2rem;
+    text-align: justify;
+    color: lighten($dark,10%);
+}
+
+.client-name {
+    width: 80%;
+    margin: 25px auto;
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: lighten($dark, 25%);
+
+
+}
+
+footer {
+    font-size: 0.8rem;
+    font-weight: 300;
+    text-align: center;
+    background: darken($light, 10%);
 }
 
 @media only screen and (max-width: 768px) {

@@ -1,0 +1,246 @@
+$light: #f7f1e3;
+$dark: #3d3d3d;
+$yellow-light: #ffda79;
+$second-color: #b71540;
+$orange-light: #ffb142;
+$orange-dark: #cc8e35;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    background: $light;
+    color: $dark;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    line-height: 40px;
+    margin: 0 20%;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    font-size: 1rem;
+    font-weight: 300;
+    color: $second-color;
+    border: 1px solid $second-color;
+    border-radius: 10px;
+    padding: 10px;
+    background: transparent;
+    transition: all 0.2s;
+}
+
+
+.button:hover {
+    color: $light;
+    border: 1px solid $second-color;
+    background: $second-color;
+    cursor: pointer;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    color: $second-color;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 50px 0;
+}
+
+h2:after {
+    display: block;
+    content: " ";
+    width: 100px;
+    height: 1px;
+    background: $second-color;
+    margin: 25px auto;
+}
+
+.clearfix {
+    zoom: 1
+}
+
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+#navbar {
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    background: darken($second-color, 10%);
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    z-index: 1;
+    ul {
+        margin: 0 auto;
+        width: 75%;
+        text-align: center;
+    }
+    li {
+        display: inline-block;
+        margin: 0 25px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.7rem;
+        line-height: 50px;
+        font-weight: 300;
+        color: $light;
+        span {
+            font-weight: 800;
+        }
+        a:link,
+        a:visited {
+            color: $light;
+            transition: all 0.2s ease-in-out;
+        }
+        a:active,
+        a:hover {
+            color: $yellow-light;
+        }
+    }
+}
+
+#about {
+    height: 100vh;
+    width: 100%;
+}
+
+.about-text {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
+#values-bar {
+    background: $second-color;
+    color: $light;
+    width: 100%;
+}
+
+.small-icon {
+    font-size: 2rem;
+    color: $yellow-light;
+    padding-right: 20px;
+}
+
+.big-icon {
+    font-size: 4rem;
+    color: $yellow-light;
+}
+
+.infobox {
+    text-align: center;
+    width: 80%;
+    margin: 30px auto;
+    p {
+        font-size: 1rem;
+        letter-spacing: 1px;
+        font-weight: 300;
+        line-height: 25px;
+    }
+}
+
+#stores {
+    text-align: center;
+    span {
+        color: $second-color;
+    }
+    ul {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        margin: 20px 0;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+    }
+}
+
+
+
+.bakeshop-store-photo {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+}
+
+#photo-warsaw {
+    background-image: url('../img/warsaw.jpg');
+}
+#photo-lublin {
+    background-image: url('../img/lublin.jpg');
+}
+#photo-gdynia {
+    background-image: url('../img/gdynia.jpg');
+}
+#photo-wroclaw {
+    background-image: url('../img/wroclaw.jpg');
+}
+
+.bakeshop-store-name {
+    background: $second-color;
+    color: $light;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 20px 0;
+}
+
+.bakeshop-store-hours {
+    background: darken($second-color, 5%);
+    padding: 20px;
+    color: $yellow-light;
+}
+
+#order {
+    text-align: center;
+}
+
+.ordering-info {
+    width: 100%;
+    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../img/warsaw.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 50px 0;
+    color: $dark;
+}
+
+@media only screen and (max-width: 768px) {
+
+        p {
+            margin: 0 5%;
+        }
+}

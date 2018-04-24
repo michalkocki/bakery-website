@@ -50,7 +50,7 @@ h2 {
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
-  margin: 250px 0 50px 0; }
+  margin-bottom: 50px; }
 
 h2:after {
   display: block;
@@ -58,7 +58,7 @@ h2:after {
   width: 100px;
   height: 1px;
   background: #b71540;
-  margin: 25px auto; }
+  margin: 25px auto 125px auto; }
 
 .clearfix {
   zoom: 1; }
@@ -139,7 +139,9 @@ nav {
     line-height: 25px; }
 
 #stores {
-  text-align: center; }
+  background: #f1e7cf;
+  text-align: center;
+  padding-top: 250px; }
   #stores span {
     color: #b71540; }
   #stores ul {
@@ -186,7 +188,8 @@ nav {
   color: #ffda79; }
 
 #order {
-  text-align: center; }
+  text-align: center;
+  padding-top: 250px; }
 
 .ordering-info {
   width: 100%;
@@ -198,7 +201,7 @@ nav {
 
 #clients {
   width: 80%;
-  margin: 200px 10%; }
+  margin: 250px 10% 125px 10%; }
 
 q {
   font-weight: 300;
@@ -214,6 +217,9 @@ q {
   font-size: 1.5rem;
   font-weight: 300;
   color: #7d7d7d; }
+
+#contact {
+  padding-top: 250px; }
 
 footer {
   font-size: 0.8rem;
@@ -250,11 +256,25 @@ textarea {
   outline: none; }
 
 @media only screen and (max-width: 768px) {
+  #values-bar {
+    padding: 25px 0; }
+
+  #stores,
+  #order,
+  #contact {
+    padding-top: 50px; }
+
+  #clients {
+    margin: 50px 10% 25px  10%; }
+
   p {
     margin: 0 5%; }
 
   h2 {
     margin: 100px 0 25px 0; }
+
+  h2:after {
+    margin: 25px auto 50px auto; }
 
   #clients {
     width: 90%;
@@ -265,6 +285,9 @@ textarea {
 
   .client-name {
     font-size: 1rem;
-    margin: 5px auto; } }
+    margin: 5px auto; }
+
+  textarea {
+    width: 90%; } }
 
 /*# sourceMappingURL=style.css.map */

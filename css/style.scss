@@ -4,6 +4,8 @@ $yellow-light: #ffda79;
 $second-color: #b71540;
 $orange-light: #ffb142;
 $orange-dark: #cc8e35;
+$paddingTop: 250px;
+
 body {
     margin: 0;
     padding: 0;
@@ -63,7 +65,7 @@ h2 {
     letter-spacing: 2px;
     text-align: center;
     text-transform: uppercase;
-    margin: 250px 0 50px 0;
+    margin-bottom: 50px;
 }
 
 h2:after {
@@ -72,7 +74,7 @@ h2:after {
     width: 100px;
     height: 1px;
     background: $second-color;
-    margin: 25px auto;
+    margin: 25px auto 125px auto;
 }
 
 .clearfix {
@@ -170,7 +172,10 @@ nav {
 }
 
 #stores {
+    background: darken($light, 5%);
     text-align: center;
+    padding-top: $paddingTop;
+
     span {
         color: $second-color;
     }
@@ -228,6 +233,7 @@ nav {
 
 #order {
     text-align: center;
+    padding-top: $paddingTop;
 }
 
 .ordering-info {
@@ -241,7 +247,7 @@ nav {
 
 #clients {
     width: 80%;
-    margin: 200px 10%;
+    margin: $paddingTop 10% (0.5*$paddingTop) 10%;
 }
 
 q {
@@ -259,8 +265,10 @@ q {
     font-size: 1.5rem;
     font-weight: 300;
     color: lighten($dark, 25%);
+}
 
-
+#contact {
+    padding-top: $paddingTop;
 }
 
 footer {
@@ -299,13 +307,33 @@ textarea {
     resize: none;
     outline: none;
 }
+
+
 @media only screen and (max-width: 768px) {
+
+        #values-bar {
+            padding: 25px 0;
+        }
+        #stores,
+        #order,
+        #contact {
+            padding-top: 50px;
+        }
+
+        #clients {
+            margin: 50px 10% 25px  10%;
+        }
+
         p {
             margin: 0 5%;
         }
 
         h2 {
             margin: 100px 0 25px 0;
+        }
+
+        h2:after {
+            margin: 25px auto 50px auto;
         }
 
         #clients {
@@ -319,6 +347,9 @@ textarea {
         .client-name {
             font-size: 1rem;
             margin: 5px auto;
+        }
 
+        textarea {
+            width: 90%;
         }
 }

@@ -55,7 +55,7 @@ h2 {
 h2:after {
   display: block;
   content: " ";
-  width: 100px;
+  width: 50%;
   height: 1px;
   background: #b71540;
   margin: 25px auto 125px auto; }
@@ -103,6 +103,9 @@ nav {
       color: #ffda79; }
 
 #about {
+  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("../img/lublin.jpg");
+  background-position: center;
+  background-size: cover;
   height: 100vh;
   width: 100%; }
 
@@ -141,7 +144,7 @@ nav {
 #stores {
   background: #f1e7cf;
   text-align: center;
-  padding-top: 250px; }
+  padding-top: 125px; }
   #stores span {
     color: #b71540; }
   #stores ul {
@@ -189,7 +192,7 @@ nav {
 
 #order {
   text-align: center;
-  padding-top: 250px; }
+  padding-top: 125px; }
 
 .ordering-info {
   width: 100%;
@@ -201,14 +204,16 @@ nav {
 
 #clients {
   width: 80%;
-  margin: 250px 10% 125px 10%; }
+  padding: 125px 10% 62.5px 10%;
+  margin-top: 125px;
+  background: #b71540; }
 
 q {
   font-weight: 300;
   font-style: italic;
   font-size: 2rem;
   text-align: justify;
-  color: #575757; }
+  color: #fdfbf7; }
 
 .client-name {
   width: 80%;
@@ -216,20 +221,20 @@ q {
   text-align: right;
   font-size: 1.5rem;
   font-weight: 300;
-  color: #7d7d7d; }
+  color: #f1e7cf; }
 
 #contact {
-  padding-top: 250px; }
+  padding-top: 125px; }
 
 footer {
   font-size: 0.8rem;
   font-weight: 300;
   text-align: center;
-  background: #ecddbb; }
+  background: #f1e7cf; }
 
 input[type=email],
 input[type=text] {
-  width: 90%;
+  width: 50%;
   margin: 0 auto;
   padding: 10px;
   font-size: 1.5rem;

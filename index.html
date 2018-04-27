@@ -16,6 +16,7 @@
     <!-- ionIcons -->
     <link rel="stylesheet" type="text/css" href="css/ionicons.css" />
     <!-- Scripts -->
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/script.js"></script>
 </head>
 
@@ -27,19 +28,20 @@
                 <span>The Bakeshop</span>
             </li>
             <li>
-                <a href="#">About</a>
+                <a href="#about">About</a>
             </li>
             <li>
-                <a href="#">Stores</a>
+                <a href="#stores">Stores</a>
             </li>
             <li>
-                <a href="#">Order</a>
+                <a href="#order">Order</a>
             </li>
             <li>
-                <a href="#">Contact</a>
+                <a href="#contact">Contact</a>
             </li>
         </ul>
     </nav>
+    
     <!-- Section: About -->
 
 
@@ -125,8 +127,9 @@
         </div>
     </div>
     <div id="order">
-        <h2>Order online</h2>
+       
         <div class="ordering-info">
+                <h2>Order online</h2>
             <h3>The Bakeshop goods delivered everyday. Always fresh!</h3>
             <p>Gummies apple pie dragée pie. Tiramisu sweet cotton candy jelly beans bear claw cake jujubes cookie sesame snaps.
                 Jelly candy canes gingerbread powder cupcake tart marshmallow.</p>
@@ -148,12 +151,12 @@
         <div class="infobox">
             <form>
                 <div class="s-6">
-                    <input type="email" placeholder="Mail" required id="mail" />
+                    <input type="email" placeholder="Your mail" required id="mail" />
                 </div>
                 <div class="s-6">
-                    <input type="text" placeholder="Name" required id="name" />
+                    <input type="text" placeholder="Your name" required id="name" />
                 </div>
-                <textarea id="message" placeholder="Message"></textarea>
+                <textarea id="message" placeholder="Leave a message here!"></textarea>
                 <button type="submit">Send</button>
             </form>
         </div>

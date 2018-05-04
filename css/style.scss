@@ -1,9 +1,9 @@
-$light: #f7f1e3;
+/* Setup */
+
+$light: #f0f0f0;
 $dark: #3d3d3d;
-$yellow-light: #ffda79;
-$second-color: #b71540;
-$orange-light: #ffb142;
-$orange-dark: #cc8e35;
+$navy: #302f46;
+$pink: #ff726c;
 $paddingTop: 125px;
 
 body {
@@ -14,6 +14,8 @@ body {
     background: $light;
     color: $dark;
 }
+
+/* Utilities */
 
 ul {
     list-style: none;
@@ -36,8 +38,8 @@ button,
     margin-top: 25px;
     font-size: 1rem;
     font-weight: 300;
-    color: $second-color;
-    border: 1px solid $second-color;
+    color: $pink;
+    border: 1px solid $pink;
     border-radius: 10px;
     padding: 10px;
     background: transparent;
@@ -47,8 +49,8 @@ button,
 button:hover,
 .button:hover {
     color: $light;
-    border: 1px solid $second-color;
-    background: $second-color;
+    border: 1px solid $pink;
+    background: $pink;
     cursor: pointer;
 }
 
@@ -56,7 +58,7 @@ h1 {
     font-weight: 300;
     font-size: 2rem;
     letter-spacing: 1px;
-    color: $second-color;
+    color: $navy;
 }
 
 h2 {
@@ -73,7 +75,7 @@ h2:after {
     content: " ";
     width: 50%;
     height: 1px;
-    background: $second-color;
+    background: $pink;
     margin: 25px auto 125px auto;
 }
 
@@ -89,23 +91,23 @@ h2:after {
     visibility: hidden;
 }
 
+/* Navbar */
+
 nav {
     position: fixed;
-    height: 50px;
     width: 100%;
-    background: darken($second-color, 10%);
+    background: darken($navy, 10%);
     box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
     top: 0;
     left: 0;
     z-index: 1;
     ul {
         margin: 0 auto;
-        width: 75%;
         text-align: center;
     }
     li {
         display: inline-block;
-        margin: 0 25px;
+        margin: 0 3%;
         text-transform: uppercase;
         letter-spacing: 2px;
         font-size: 0.7rem;
@@ -113,6 +115,7 @@ nav {
         font-weight: 300;
         color: $light;
         span {
+            color: $pink;
             font-weight: 800;
         }
         a:link,
@@ -122,13 +125,15 @@ nav {
         }
         a:active,
         a:hover {
-            color: $yellow-light;
+            color: $pink;
         }
     }
 }
 
+/* Section: About */
+
 #about {
-    background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('../img/lublin.jpg');
+    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.9)), url('../img/hero_img.jpg');
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -142,24 +147,23 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-
 }
 
 #values-bar {
-    background: $second-color;
+    background: $navy;
     color: $light;
     width: 100%;
 }
 
 .small-icon {
     font-size: 2rem;
-    color: $yellow-light;
+    color: $pink;
     padding-right: 20px;
 }
 
 .big-icon {
     font-size: 4rem;
-    color: $yellow-light;
+    color: $pink;
 }
 
 .infobox {
@@ -174,13 +178,14 @@ nav {
     }
 }
 
+/* Section: Stores */
+
 #stores {
     background: darken($light, 5%);
     text-align: center;
     padding-top: $paddingTop;
-
     span {
-        color: $second-color;
+        color: darken($pink, 10%);
     }
     ul {
         text-align: center;
@@ -196,30 +201,50 @@ nav {
     }
 }
 
+.on-map {
+    i {
+        color: $pink;
+        font-size: 2rem;
+    }
+    font-size: 1.25rem;
+    color: $dark;
+    padding-top: 55px;
+    width: 100%;
+    height: 145px;
+    background: rgba(255, 255, 255, 0.6);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
 
+.on-map:hover {
+    opacity: 1;
+    cursor: pointer;
+}
 
 .bakeshop-store-photo {
     width: 100%;
     height: 200px;
     background-size: cover;
 }
-
 #photo-warsaw {
     background-image: url('../img/warsaw.jpg');
 }
+
 #photo-lublin {
     background-image: url('../img/lublin.jpg');
 }
+
 #photo-gdynia {
     background-image: url('../img/gdynia.jpg');
 }
+
 #photo-wroclaw {
     background-image: url('../img/wroclaw.jpg');
 }
 
 .bakeshop-store-name {
-    background: $second-color;
-    color: $light;
+    background: $navy;
+    color: $pink;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 2px;
@@ -229,10 +254,12 @@ nav {
 }
 
 .bakeshop-store-hours {
-    background: darken($second-color, 5%);
+    background: darken($navy, 5%);
     padding: 20px;
-    color: $yellow-light;
+    color: $light;
 }
+
+/* Section: Order */
 
 #order {
     text-align: center;
@@ -241,46 +268,17 @@ nav {
 
 .ordering-info {
     width: 100%;
-    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../img/warsaw.jpg');
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('../img/window.jpg');
     background-attachment: fixed;
     background-size: cover;
     padding: 50px 0;
     color: $dark;
 }
 
-#clients {
-    width: 80%;
-    padding: $paddingTop 10% 0.5*$paddingTop 10%;
-    margin-top: $paddingTop;
-    background: $second-color;
-}
-
-q {
-    font-weight: 300;
-    font-style: italic;
-    font-size: 2rem;
-    text-align: justify;
-    color: lighten($light,5%);
-}
-
-.client-name {
-    width: 80%;
-    margin: 25px auto;
-    text-align: right;
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: darken($light, 5%);
-}
+/* Section: Contact */
 
 #contact {
     padding-top: $paddingTop;
-}
-
-footer {
-    font-size: 0.8rem;
-    font-weight: 300;
-    text-align: center;
-    background: darken($light, 5%);
 }
 
 input[type=email],
@@ -294,15 +292,15 @@ input[type=text] {
     text-align: center;
     background: transparent;
     border: 0;
-    border-bottom: 1px solid $second-color;
+    border-bottom: 1px solid $navy;
     outline: none;
 }
 
 textarea {
     width: 100%;
     height: 200px;
-    background: lighten($light,5%);
-    border: 1px solid $second-color;
+    background: lighten($light, 5%);
+    border: 1px solid $navy;
     border-radius: 10px;
     padding: 10px;
     font-size: 1rem;
@@ -313,50 +311,61 @@ textarea {
     outline: none;
 }
 
+/* Footer */
+
+footer {
+    font-size: 0.8rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+/* Responsive Web Design */
 
 @media only screen and (max-width: 768px) {
-
-        
-
-        #values-bar {
-            padding: 25px 0;
+    nav {
+      visibility: hidden;
+        margin: 0;
+        ul {
+            padding: 0;
+            li {
+                display: block;
+                width: 100%;
+                margin: 0;
+            }
         }
-        #stores,
-        #order,
-        #contact {
-            padding-top: 50px;
-        }
-
-        #clients {
-            margin: 50px 10% 25px  10%;
-        }
-
-        p {
-            margin: 0 5%;
-        }
-
-        h2 {
-            margin: 100px 0 25px 0;
-        }
-
-        h2:after {
-            margin: 25px auto 50px auto;
-        }
-
-        #clients {
-            width: 90%;
-            margin: 75px 5%;
-        }
-        q {
-            font-size: 1.2rem;
-        }
-
-        .client-name {
-            font-size: 1rem;
-            margin: 5px auto;
-        }
-
-        textarea {
-            width: 90%;
-        }
+    }
+    #values-bar {
+        padding: 25px 0;
+    }
+    #stores,
+    #order,
+    #contact {
+        padding-top: 50px;
+    }
+    #clients {
+        margin: 50px 10% 25px 10%;
+    }
+    p {
+        margin: 0 5%;
+    }
+    h2 {
+        margin: 100px 0 25px 0;
+    }
+    h2:after {
+        margin: 25px auto 50px auto;
+    }
+    #clients {
+        width: 90%;
+        margin: 75px 5%;
+    }
+    q {
+        font-size: 1.2rem;
+    }
+    .client-name {
+        font-size: 1rem;
+        margin: 5px auto;
+    }
+    textarea {
+        width: 90%;
+    }
 }

@@ -1,11 +1,13 @@
+/* Setup */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Raleway', sans-serif;
   font-size: 20px;
-  background: #f7f1e3;
+  background: #f0f0f0;
   color: #3d3d3d; }
 
+/* Utilities */
 ul {
   list-style: none; }
 
@@ -24,8 +26,8 @@ button,
   margin-top: 25px;
   font-size: 1rem;
   font-weight: 300;
-  color: #b71540;
-  border: 1px solid #b71540;
+  color: #ff726c;
+  border: 1px solid #ff726c;
   border-radius: 10px;
   padding: 10px;
   background: transparent;
@@ -33,16 +35,16 @@ button,
 
 button:hover,
 .button:hover {
-  color: #f7f1e3;
-  border: 1px solid #b71540;
-  background: #b71540;
+  color: #f0f0f0;
+  border: 1px solid #ff726c;
+  background: #ff726c;
   cursor: pointer; }
 
 h1 {
   font-weight: 300;
   font-size: 2rem;
   letter-spacing: 1px;
-  color: #b71540; }
+  color: #302f46; }
 
 h2 {
   font-weight: 300;
@@ -57,7 +59,7 @@ h2:after {
   content: " ";
   width: 50%;
   height: 1px;
-  background: #b71540;
+  background: #ff726c;
   margin: 25px auto 125px auto; }
 
 .clearfix {
@@ -70,40 +72,41 @@ h2:after {
   height: 0;
   visibility: hidden; }
 
+/* Navbar */
 nav {
   position: fixed;
-  height: 50px;
   width: 100%;
-  background: #891030;
+  background: #1b1b27;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
   top: 0;
   left: 0;
   z-index: 1; }
   nav ul {
     margin: 0 auto;
-    width: 75%;
     text-align: center; }
   nav li {
     display: inline-block;
-    margin: 0 25px;
+    margin: 0 3%;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.7rem;
     line-height: 50px;
     font-weight: 300;
-    color: #f7f1e3; }
+    color: #f0f0f0; }
     nav li span {
+      color: #ff726c;
       font-weight: 800; }
     nav li a:link,
     nav li a:visited {
-      color: #f7f1e3;
+      color: #f0f0f0;
       transition: all 0.2s ease-in-out; }
     nav li a:active,
     nav li a:hover {
-      color: #ffda79; }
+      color: #ff726c; }
 
+/* Section: About */
 #about {
-  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("../img/lublin.jpg");
+  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.9)), url("../img/hero_img.jpg");
   background-position: center;
   background-size: cover;
   height: 100vh;
@@ -118,18 +121,18 @@ nav {
   text-align: center; }
 
 #values-bar {
-  background: #b71540;
-  color: #f7f1e3;
+  background: #302f46;
+  color: #f0f0f0;
   width: 100%; }
 
 .small-icon {
   font-size: 2rem;
-  color: #ffda79;
+  color: #ff726c;
   padding-right: 20px; }
 
 .big-icon {
   font-size: 4rem;
-  color: #ffda79; }
+  color: #ff726c; }
 
 .infobox {
   text-align: center;
@@ -141,12 +144,13 @@ nav {
     font-weight: 300;
     line-height: 25px; }
 
+/* Section: Stores */
 #stores {
-  background: #f1e7cf;
+  background: #e3e3e3;
   text-align: center;
   padding-top: 125px; }
   #stores span {
-    color: #b71540; }
+    color: #ff4139; }
   #stores ul {
     text-align: center;
     margin: 0;
@@ -157,6 +161,23 @@ nav {
     font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 2px; }
+
+.on-map {
+  font-size: 1.25rem;
+  color: #3d3d3d;
+  padding-top: 55px;
+  width: 100%;
+  height: 145px;
+  background: rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  transition: all 0.2s ease-in-out; }
+  .on-map i {
+    color: #ff726c;
+    font-size: 2rem; }
+
+.on-map:hover {
+  opacity: 1;
+  cursor: pointer; }
 
 .bakeshop-store-photo {
   width: 100%;
@@ -176,8 +197,8 @@ nav {
   background-image: url("../img/wroclaw.jpg"); }
 
 .bakeshop-store-name {
-  background: #b71540;
-  color: #f7f1e3;
+  background: #302f46;
+  color: #ff726c;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 2px;
@@ -186,51 +207,26 @@ nav {
   padding: 20px 0; }
 
 .bakeshop-store-hours {
-  background: #a01238;
+  background: #262537;
   padding: 20px;
-  color: #ffda79; }
+  color: #f0f0f0; }
 
+/* Section: Order */
 #order {
   text-align: center;
   padding-top: 125px; }
 
 .ordering-info {
   width: 100%;
-  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../img/warsaw.jpg");
+  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("../img/window.jpg");
   background-attachment: fixed;
   background-size: cover;
   padding: 50px 0;
   color: #3d3d3d; }
 
-#clients {
-  width: 80%;
-  padding: 125px 10% 62.5px 10%;
-  margin-top: 125px;
-  background: #b71540; }
-
-q {
-  font-weight: 300;
-  font-style: italic;
-  font-size: 2rem;
-  text-align: justify;
-  color: #fdfbf7; }
-
-.client-name {
-  width: 80%;
-  margin: 25px auto;
-  text-align: right;
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: #f1e7cf; }
-
+/* Section: Contact */
 #contact {
   padding-top: 125px; }
-
-footer {
-  font-size: 0.8rem;
-  font-weight: 300;
-  text-align: center;
-  background: #f1e7cf; }
 
 input[type=email],
 input[type=text] {
@@ -243,14 +239,14 @@ input[type=text] {
   text-align: center;
   background: transparent;
   border: 0;
-  border-bottom: 1px solid #b71540;
+  border-bottom: 1px solid #302f46;
   outline: none; }
 
 textarea {
   width: 100%;
   height: 200px;
-  background: #fdfbf7;
-  border: 1px solid #b71540;
+  background: #fdfdfd;
+  border: 1px solid #302f46;
   border-radius: 10px;
   padding: 10px;
   font-size: 1rem;
@@ -260,7 +256,24 @@ textarea {
   resize: none;
   outline: none; }
 
+/* Footer */
+footer {
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-align: center; }
+
+/* Responsive Web Design */
 @media only screen and (max-width: 768px) {
+  nav {
+    visibility: hidden;
+    margin: 0; }
+    nav ul {
+      padding: 0; }
+      nav ul li {
+        display: block;
+        width: 100%;
+        margin: 0; }
+
   #values-bar {
     padding: 25px 0; }
 
@@ -270,7 +283,7 @@ textarea {
     padding-top: 50px; }
 
   #clients {
-    margin: 50px 10% 25px  10%; }
+    margin: 50px 10% 25px 10%; }
 
   p {
     margin: 0 5%; }

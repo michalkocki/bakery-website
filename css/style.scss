@@ -5,6 +5,15 @@ $dark: #3d3d3d;
 $navy: #302f46;
 $pink: #ff726c;
 $paddingTop: 125px;
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
 
 body {
     margin: 0;
@@ -17,6 +26,10 @@ body {
 
 /* Utilities */
 
+.scroll-lock {
+    overflow: hidden;
+}
+
 ul {
     list-style: none;
 }
@@ -25,6 +38,7 @@ a {
     text-decoration: none;
     margin: 0;
     padding: 0;
+    color: $light;
 }
 
 p {
@@ -54,6 +68,17 @@ button:hover,
     cursor: pointer;
 }
 
+.color-itself {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.5rem;
+    transition: 0.3s all ease-in-out;
+}
+
+.color-itself:hover {
+    color: $pink;
+}
+
 h1 {
     font-weight: 300;
     font-size: 2rem;
@@ -77,6 +102,14 @@ h2:after {
     height: 1px;
     background: $pink;
     margin: 25px auto 125px auto;
+}
+
+h4 {
+    font-size: 0.7rem;
+    font-weight: 800;
+    margin: 1% 2%;
+    color: $pink;
+    text-transform: uppercase;
 }
 
 .clearfix {
@@ -130,6 +163,17 @@ nav {
     }
 }
 
+#scroll-down {
+    visibility: hidden;
+    position: absolute;
+    top: 90%;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    color: $pink;
+    z-index: 3;
+}
+
 /* Section: About */
 
 #about {
@@ -138,14 +182,12 @@ nav {
     background-size: cover;
     height: 100vh;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .about-text {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
 }
 
@@ -201,6 +243,35 @@ nav {
     }
 }
 
+.popup-wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.6);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.store-popup {
+    text-align: right;
+    border-radius: 20px;
+    padding: 20px;
+    background: $light;
+    position: fixed;
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    i {
+        margin-bottom: 10px;
+    }
+}
+
 .on-map {
     i {
         color: $pink;
@@ -211,7 +282,10 @@ nav {
     padding-top: 55px;
     width: 100%;
     height: 145px;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255,
+    255,
+    255,
+    0.6);
     opacity: 0;
     transition: all 0.2s ease-in-out;
 }
@@ -226,6 +300,7 @@ nav {
     height: 200px;
     background-size: cover;
 }
+
 #photo-warsaw {
     background-image: url('../img/warsaw.jpg');
 }
@@ -319,11 +394,51 @@ footer {
     text-align: center;
 }
 
+/* Order online page */
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        width:80%;
+    }
+}
+
+.ordering-form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 5% auto;
+    border: 1px solid darken($light, 10%);
+    border-radius: 10px;
+    padding: 40px;
+    background-color: darken($light, 5%);
+
+    h2:after {
+        margin-bottom:25px;
+    }
+
+    input[type=text], input[type=email], input[type=tel] {
+        border: 1px solid darken($light, 20%);
+        border-radius: 10px;
+        margin-bottom: 25px;
+        font-size: 1rem;
+        width: 100%;
+        text-align: left;
+        padding: 20px;
+    }
+
+}
+
 /* Responsive Web Design */
 
 @media only screen and (max-width: 768px) {
     nav {
-      visibility: hidden;
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        position: relative;
         margin: 0;
         ul {
             padding: 0;
@@ -334,6 +449,16 @@ footer {
             }
         }
     }
+    #scroll-down {
+        visibility: visible;
+    }
+    #about {
+        height: auto;
+        padding: 100px 0;
+    }
+    #close-nav-icon {
+        visibility: visible;
+    }
     #values-bar {
         padding: 25px 0;
     }
@@ -342,11 +467,10 @@ footer {
     #contact {
         padding-top: 50px;
     }
-    #clients {
-        margin: 50px 10% 25px 10%;
-    }
     p {
         margin: 0 5%;
+        font-size: 0.9rem;
+        line-height: 1.5rem;
     }
     h2 {
         margin: 100px 0 25px 0;
@@ -354,16 +478,9 @@ footer {
     h2:after {
         margin: 25px auto 50px auto;
     }
-    #clients {
-        width: 90%;
-        margin: 75px 5%;
-    }
-    q {
-        font-size: 1.2rem;
-    }
-    .client-name {
+    h3 {
         font-size: 1rem;
-        margin: 5px auto;
+        margin: 1rem;
     }
     textarea {
         width: 90%;

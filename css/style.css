@@ -1,4 +1,12 @@
 /* Setup */
+html {
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
 body {
   margin: 0;
   padding: 0;
@@ -8,13 +16,17 @@ body {
   color: #3d3d3d; }
 
 /* Utilities */
+.scroll-lock {
+  overflow: hidden; }
+
 ul {
   list-style: none; }
 
 a {
   text-decoration: none;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  color: #f0f0f0; }
 
 p {
   line-height: 40px;
@@ -40,6 +52,15 @@ button:hover,
   background: #ff726c;
   cursor: pointer; }
 
+.color-itself {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.5rem;
+  transition: 0.3s all ease-in-out; }
+
+.color-itself:hover {
+  color: #ff726c; }
+
 h1 {
   font-weight: 300;
   font-size: 2rem;
@@ -61,6 +82,13 @@ h2:after {
   height: 1px;
   background: #ff726c;
   margin: 25px auto 125px auto; }
+
+h4 {
+  font-size: 0.7rem;
+  font-weight: 800;
+  margin: 1% 2%;
+  color: #ff726c;
+  text-transform: uppercase; }
 
 .clearfix {
   zoom: 1; }
@@ -104,20 +132,28 @@ nav {
     nav li a:hover {
       color: #ff726c; }
 
+#scroll-down {
+  visibility: hidden;
+  position: absolute;
+  top: 90%;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  color: #ff726c;
+  z-index: 3; }
+
 /* Section: About */
 #about {
   background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.9)), url("../img/hero_img.jpg");
   background-position: center;
   background-size: cover;
   height: 100vh;
-  width: 100%; }
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 .about-text {
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center; }
 
 #values-bar {
@@ -161,6 +197,32 @@ nav {
     font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 2px; }
+
+.popup-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; }
+
+.store-popup {
+  text-align: right;
+  border-radius: 20px;
+  padding: 20px;
+  background: #f0f0f0;
+  position: fixed;
+  width: 90%;
+  height: 80%;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; }
+  .store-popup i {
+    margin-bottom: 10px; }
 
 .on-map {
   font-size: 1.25rem;
@@ -262,10 +324,41 @@ footer {
   font-weight: 300;
   text-align: center; }
 
+/* Order online page */
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .image-container img {
+    width: 80%; }
+
+.ordering-form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 5% auto;
+  border: 1px solid #d7d7d7;
+  border-radius: 10px;
+  padding: 40px;
+  background-color: #e3e3e3; }
+  .ordering-form h2:after {
+    margin-bottom: 25px; }
+  .ordering-form input[type=text], .ordering-form input[type=email], .ordering-form input[type=tel] {
+    border: 1px solid #bdbdbd;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    width: 100%;
+    text-align: left;
+    padding: 20px; }
+
 /* Responsive Web Design */
 @media only screen and (max-width: 768px) {
   nav {
-    visibility: hidden;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    position: relative;
     margin: 0; }
     nav ul {
       padding: 0; }
@@ -273,6 +366,16 @@ footer {
         display: block;
         width: 100%;
         margin: 0; }
+
+  #scroll-down {
+    visibility: visible; }
+
+  #about {
+    height: auto;
+    padding: 100px 0; }
+
+  #close-nav-icon {
+    visibility: visible; }
 
   #values-bar {
     padding: 25px 0; }
@@ -282,11 +385,10 @@ footer {
   #contact {
     padding-top: 50px; }
 
-  #clients {
-    margin: 50px 10% 25px 10%; }
-
   p {
-    margin: 0 5%; }
+    margin: 0 5%;
+    font-size: 0.9rem;
+    line-height: 1.5rem; }
 
   h2 {
     margin: 100px 0 25px 0; }
@@ -294,16 +396,9 @@ footer {
   h2:after {
     margin: 25px auto 50px auto; }
 
-  #clients {
-    width: 90%;
-    margin: 75px 5%; }
-
-  q {
-    font-size: 1.2rem; }
-
-  .client-name {
+  h3 {
     font-size: 1rem;
-    margin: 5px auto; }
+    margin: 1rem; }
 
   textarea {
     width: 90%; } }

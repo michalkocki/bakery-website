@@ -42,14 +42,9 @@
         </ul>
     </nav>
 
-    <!-- <div id="navbar_s">
-        <ul>
-            <li><span>The Bakeshop</span></li>
-            <li><i class="ion"</li>
-        </ul>
-    </div> -->
-
-    <!-- Section: About -->
+    <div id="scroll-down">
+        <a href="#about"><i class="ion-arrow-down-b"></i></a>
+    </div>
 
     </div>
     <div id="about" class="clearfix">
@@ -88,50 +83,83 @@
 
     <div id="stores" class="clearfix">
         <h2>Stores</h2>
-        <h3>Where you can find <span>The Bakeshop</span> stores?</h3>
-        <div class="m-3">
-            <div class="bakeshop-store-photo" id="photo-warsaw"><div class="on-map"><i class="ion-pin"></i><br>View on map!</div></div>
-            <div class="bakeshop-store-name">Warsaw</div>
-            <div class="bakeshop-store-hours">
-                <ul>
-                    <li>Mon - Fri: 6 a.m - 5 p.m</li>
-                    <li>Sat: 6 a.m - 3 p.m</li>
-                    <li>Sun: 7 a.m - 2 p.m</li>
-                </ul>
+        <h3>Where you can find
+            <span>The Bakeshop</span> stores?</h3>
+        <div class="stores-wrapper">
+            <div class="m-3">
+                <div class="bakeshop-store-photo" id="photo-warsaw">
+                    <div class="on-map" id="show-warsaw">
+                        <i class="ion-pin"></i>
+                        <br>View on map!</div>
+                </div>
+                <div class="bakeshop-store-name">Warsaw</div>
+                <div class="bakeshop-store-hours">
+                    <ul>
+                        <li>Mon - Fri: 6 a.m - 5 p.m</li>
+                        <li>Sat: 6 a.m - 3 p.m</li>
+                        <li>Sun: 7 a.m - 2 p.m</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="m-3">
+                <div class="bakeshop-store-photo" id="photo-lublin">
+                    <div class="on-map" id="show-lublin">
+                        <i class="ion-pin"></i>
+                        <br>View on map!</div>
+                </div>
+                <div class="bakeshop-store-name">Lublin</div>
+                <div class="bakeshop-store-hours">
+                    <ul>
+                        <li>Mon - Fri: 6 a.m - 5 p.m</li>
+                        <li>Sat: 6 a.m - 3 p.m</li>
+                        <li>Sun: 7 a.m - 2 p.m</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="m-3">
+                <div class="bakeshop-store-photo" id="photo-gdynia">
+                    <div class="on-map" id="show-gdynia">
+                        <i class="ion-pin"></i>
+                        <br>View on map!</div>
+                </div>
+                <div class="bakeshop-store-name">Gdynia</div>
+                <div class="bakeshop-store-hours">
+                    <ul>
+                        <li>Mon - Fri: 6 a.m - 5 p.m</li>
+                        <li>Sat: 6 a.m - 3 p.m</li>
+                        <li>Sun: 7 a.m - 2 p.m</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="m-3">
+                <div class="bakeshop-store-photo" id="photo-wroclaw">
+                    <div class="on-map" id="show-wroclaw">
+                        <i class="ion-pin"></i>
+                        <br>View on map!</div>
+                </div>
+                <div class="bakeshop-store-name">Wrocław</div>
+                <div class="bakeshop-store-hours">
+                    <ul>
+                        <li>Mon - Fri: 6 a.m - 5 p.m</li>
+                        <li>Sat: 6 a.m - 3 p.m</li>
+                        <li>Sun: 7 a.m - 2 p.m</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="m-3">
-            <div class="bakeshop-store-photo" id="photo-lublin"><div class="on-map"><i class="ion-pin"></i><br>View on map!</div></div>
-            <div class="bakeshop-store-name">Lublin</div>
-            <div class="bakeshop-store-hours">
-                <ul>
-                    <li>Mon - Fri: 6 a.m - 5 p.m</li>
-                    <li>Sat: 6 a.m - 3 p.m</li>
-                    <li>Sun: 7 a.m - 2 p.m</li>
-                </ul>
-            </div>
-        </div>
-        <div class="m-3">
-            <div class="bakeshop-store-photo" id="photo-gdynia"><div class="on-map"><i class="ion-pin"></i><br>View on map!</div></div>
-            <div class="bakeshop-store-name">Gdynia</div>
-            <div class="bakeshop-store-hours">
-                <ul>
-                    <li>Mon - Fri: 6 a.m - 5 p.m</li>
-                    <li>Sat: 6 a.m - 3 p.m</li>
-                    <li>Sun: 7 a.m - 2 p.m</li>
-                </ul>
-            </div>
-        </div>
-        <div class="m-3">
-            <div class="bakeshop-store-photo" id="photo-wroclaw"><div class="on-map"><i class="ion-pin"></i><br>View on map!</div></div>
-            <div class="bakeshop-store-name">Wrocław</div>
-            <div class="bakeshop-store-hours">
-                <ul>
-                    <li>Mon - Fri: 6 a.m - 5 p.m</li>
-                    <li>Sat: 6 a.m - 3 p.m</li>
-                    <li>Sun: 7 a.m - 2 p.m</li>
-                </ul>
-            </div>
+    </div>
+
+    <div class="popup-wrapper">
+        <div class="store-popup">
+            <i class="ion-close color-itself" id="close-map"></i>
+            <iframe id="map-warsaw" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d156388.35438371697!2d20.921111435579697!3d52.23306532125446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669a869f01%3A0x72f0be2a88ead3fc!2sWarszawa!5e0!3m2!1spl!2spl!4v1525696531121"
+                width="100%" height="95%" frameborder="0" style="border:0"></iframe>
+            <iframe id="map-lublin" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79969.5286943548!2d22.493730562671047!3d51.21819562167822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472257141e154061%3A0x5528ee7af6e8e95f!2sLublin!5e0!3m2!1spl!2spl!4v1525700473381"
+                width="100%" height="95%" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe id="map-gdynia" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d148267.24720290687!2d18.323396716036402!3d54.503943255606686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fda145071ed789%3A0xdee2f99989236636!2sGdynia!5e0!3m2!1spl!2spl!4v1525700505473"
+                width="100%" height="95%" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe id="map-wroclaw" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d160254.95327842576!2d16.851781078539666!3d51.12720970663511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fe9c2d4b58abf%3A0xb70956aec205e0f5!2zV3JvY8WCYXc!5e0!3m2!1spl!2spl!4v1525700532712"
+                width="100%" height="95%" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
     </div>
 

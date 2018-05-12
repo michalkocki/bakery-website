@@ -25,28 +25,57 @@ $(document).ready(function () {
         $('body').removeClass('scroll-lock');
     });
 
-    $('#show-warsaw').click(function () {
-        $('body').addClass('scroll-lock');
-        $('.popup-wrapper').fadeIn(100);
-        $('#map-warsaw').fadeIn(100);
-    });
+    showMapOnClick('#show-warsaw', '#map-warsaw');
+    showMapOnClick('#show-lublin', '#map-lublin');
+    showMapOnClick('#show-gdynia', '#map-gdynia');
+    showMapOnClick('#show-wroclaw', '#map-wroclaw');
 
-    $('#show-lublin').click(function () {
-        $('body').addClass('scroll-lock');
-        $('.popup-wrapper').fadeIn(100);
-        $('#map-lublin').fadeIn(100);
-    });
+    /* Checking Regex */
 
-    $('#show-gdynia').click(function () {
-        $('body').addClass('scroll-lock');
-        $('.popup-wrapper').fadeIn(100);
-        $('#map-gdynia').fadeIn(100);
-    });
-
-    $('#show-wroclaw').click(function () {
-        $('body').addClass('scroll-lock');
-        $('.popup-wrapper').fadeIn(100);
-        $('#map-wroclaw').fadeIn(100);
-    });
+    let nameRegex = /^[a-ząśżźćęółń]+\s*[a-ząśżźćęółń]+(?:\s*-\s*)?[a-ząśżźćęółń]+$/i;
+    let mailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let addressRegex = /^[a-zA-ZżźćńółęąśŻŹĆĄŚĘŁÓŃ0-9\s,.'-]{3,}$/;
+    let zipRegex = /(\d{2}-\d{3})/;
+    let phoneRegex = /\+48 [0-9\s]{11}/;
+    checkRegex('#name', nameRegex);
+    checkRegex('#mail', mailRegex);
+    checkRegex('#address', addressRegex);
+    checkRegex('#city', addressRegex);
+    checkRegex('#zip', zipRegex);
+    checkRegex('#number', phoneRegex);
 
 });
+
+function showMapOnClick(id, mapid) {
+    $(id).click(function () {
+        $('body').addClass('scroll-lock');
+        $('.popup-wrapper').fadeIn(100);
+        $(mapid).fadeIn(100);
+    });
+}
+
+function checkRegex(id, regex) {
+    $(id).on('keypress keydown keyup', function () {
+        if (!$(id).val().match(regex)) {
+            $(id).removeClass('valid');
+            $(id).addClass('invalid');
+            $('#doneButton').prop("disabled", true);
+        } else {
+            $(id).removeClass('invalid');
+            $(id).addClass('valid');
+            $('#doneButton').prop("disabled", false);
+        }
+    });
+}
+
+/* Formatting input boxes */
+
+var numberFormat = new Cleave('.nr', {
+    blocks: [3,3,3,3],
+    prefix: '+48'
+})
+
+var zipCodeFormat = new Cleave('.zc', {
+    blocks: [2,3],
+    delimiter: '-'
+})

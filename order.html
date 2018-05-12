@@ -12,35 +12,142 @@
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/ionicons.css" />
 
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/ionicons@4.0.0/dist/ionicons.js"></script>
+    <script src="js/cleave.min.js"></script>
+
+
 </head>
 
 <body>
 </body>
-<div class="l-6 image-container">
 
-    <img src="img/bag.png" />
+
+<!-- <div class="ordering-form">
+    <img src="img/logo.svg" alt="The Bakeshop" />
+    <h2>Order online</h2>
+    <label for="name">
+        <h4>Full name</h4>
+    </label>
+    <input type="text" id="name" placeholder="John Appleseed" required/>
+    <label for="address">
+        <h4>Street</h4>
+    </label>
+    <input type="text" id="address" placeholder="Infinite Loop" required/>
+    <label for="city">
+        <h4>City</h4>
+    </label>
+    <input type="text" id="city" placeholder="San Francisco" required/>
+    <label for="zip">
+        <h4>Zip Code</h4>
+    </label>
+    <input type="text" id="zip" class="zc" placeholder="00-000" required/>
+    <label for="mail">
+        <h4>Mail</h4>
+    </label>
+    <input type="email" id="mail" placeholder="example@mail.com" required/>
+    <label for="number">
+        <h4>Phone number</h4>
+    </label>
+    <input type="text" id="number" class="nr" placeholder="000 000 000" required/>
+    <button id="doneButton" disabled>Done!</button>
+</div> -->
+
+<div class="ordering-form-goods">
+        
+    <h2><ion-icon name="cart" class="big-icon"></ion-icon></h2>
+    <div class="s-4">
+        <div class="sm-title">Starter</div>
+        <div class="sm-text">
+            <ul>
+                <li class="valid">
+                    <ion-icon name="checkmark-circle"></ion-icon>Thing
+                </li>
+                <li class="valid">
+                    <ion-icon name="checkmark-circle"></ion-icon>Thing
+                </li>
+                <li>
+                    <ion-icon name="close-circle"></ion-icon>Thing
+                </li>
+                <li>
+                    <ion-icon name="close-circle"></ion-icon>Thing
+                </li>
+                <li>
+                    <ion-icon name="close-circle"></ion-icon>Thing
+                </li>
+            </ul>
+        </div>
+        <div class="sm-title">
+            Only
+            <span>$19.90</span>
+            per week
+        </div>
+        <div class="sm-title">
+            <input type="radio" name="order-options" selected>Select
+        </div>
+    </div>
+    <div class="s-4">
+        <div class="sm-title">Standard</div>
+        <div class="sm-text">
+            <ul>
+                <li class="valid">
+                    <ion-icon name="checkmark-circle"></ion-icon>Thing
+                </li>
+                <li class="valid">
+                    <ion-icon name="checkmark-circle"></ion-icon>Thing
+                </li>
+                <li class="valid">
+                    <ion-icon name="checkmark-circle"></ion-icon>Thing
+                </li>
+                <li>
+                    <ion-icon name="close-circle"></ion-icon>Thing
+                </li>
+                <li>
+                    <ion-icon name="close-circle"></ion-icon>Thing
+                </li>
+            </ul>
+        </div>
+        <div class="sm-title">
+            <span>$34.99</span>
+            per week
+        </div>
+        <div class="sm-title">
+            <input type="radio" name="order-options">Select
+        </div>
+    </div>
+    <div class="s-4">
+        <div class="sm-title">Full</div>
+        <div class="sm-text">
+            <ul>
+                <li class="valid">
+                    <ion-icon name="checkmark-circle"></ion-icon>Thing
+                </li>
+                <li class="valid">
+                    <ion-icon name="checkmark-circle"></ion-icon>Thing
+                </li>
+                <li class="valid">
+                    <ion-icon name="checkmark-circle"></ion-icon>Thing
+                </li>
+                <li class="valid">
+                    <ion-icon name="checkmark-circle"></ion-icon>Thing
+                </li>
+                <li class="valid">
+                    <ion-icon name="checkmark-circle"></ion-icon>Thing
+                </li>
+            </ul>
+        </div>
+        <div class="sm-title">
+            <span>$49.99</span>
+            per week
+        </div>
+        <div class="sm-title">
+            <input type="radio" name="order-options">Select
+        </div>
+    </div>
 </div>
-<div class="l-6">
-    <div class="ordering-form">
-<h2>Order online</h2>
-<h4>Your name</h4>
-<input type="text" placeholder="John Appleseed" required/>
-<h4>Street</h4>
-<input type="text" placeholder="Infinite Loop" required/>
-<h4>City</h4>
-<input type="text" placeholder="San Francisco" required/>
-<h4>Zip Code</h4>
-<input type="text" placeholder="000000" required/>
-<h4>Mail</h4>
-<input type="email" placeholder="example@mail.com" required/>
-<h4>Phone number</h4>
-<input type="text" placeholder="00000000000" required/>
-<button>Done!</button>
-</div>
-</div>
+
+
+<script src="js/script.js"></script>
 
 </html>

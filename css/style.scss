@@ -68,6 +68,13 @@ button:hover,
     cursor: pointer;
 }
 
+button:disabled {
+    color: darken($light, 30%);
+    background: transparent;
+    border: 1px solid darken($light, 30%);
+    cursor: unset;
+}
+
 .color-itself {
     cursor: pointer;
     display: inline-block;
@@ -267,13 +274,13 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    i {
+    ion-icon {
         margin-bottom: 10px;
     }
 }
 
 .on-map {
-    i {
+    ion-icon {
         color: $pink;
         font-size: 2rem;
     }
@@ -281,7 +288,7 @@ nav {
     color: $dark;
     padding-top: 55px;
     width: 100%;
-    height: 145px;
+    height: 100%;
     background: rgba(255,
     255,
     255,
@@ -317,7 +324,7 @@ nav {
     background-image: url('../img/wroclaw.jpg');
 }
 
-.bakeshop-store-name {
+.sm-title {
     background: $navy;
     color: $pink;
     text-transform: uppercase;
@@ -326,12 +333,32 @@ nav {
     font-size: 1rem;
     font-weight: 300;
     padding: 20px 0;
+    span {
+        font-size: 2rem;
+        color: lighten($pink, 10%);
+    }
 }
 
-.bakeshop-store-hours {
+.sm-text {
     background: darken($navy, 5%);
     padding: 20px;
     color: $light;
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            ion-icon {
+                margin-right: 10px;
+            }
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1rem;
+            margin: 10px 0;
+        }
+    }
 }
 
 /* Section: Order */
@@ -400,35 +427,47 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    img{
-        width:80%;
+    img {
+        width: 80%;
     }
 }
 
-.ordering-form {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    margin: 5% auto;
+.ordering-form,
+.ordering-form-goods {
+    width: 50%;
+    margin: 15px auto;
     border: 1px solid darken($light, 10%);
     border-radius: 10px;
-    padding: 40px;
+    padding: 0;
     background-color: darken($light, 5%);
-
-    h2:after {
-        margin-bottom:25px;
+    img {
+        width: 20%;
+        margin: 0 auto;
     }
-
-    input[type=text], input[type=email], input[type=tel] {
+    h2:after {
+        margin-bottom: 15px;
+    }
+    input[type=text],
+    input[type=email],
+    input[type=tel] {
         border: 1px solid darken($light, 20%);
         border-radius: 10px;
-        margin-bottom: 25px;
+        margin-bottom: 15px;
         font-size: 1rem;
+        font-weight: 300;
         width: 100%;
         text-align: left;
         padding: 20px;
     }
+}
 
+.valid {
+    color: #44bd32;
+}
+
+.invalid {
+    color: #e84118;
+    font-weight: bold;
 }
 
 /* Responsive Web Design */
@@ -484,5 +523,15 @@ footer {
     }
     textarea {
         width: 90%;
+    }
+    .ordering-form {
+        width: 95%;
+        padding: 10px;
+        img {
+            width: 50%;
+        }
+        h2 {
+            margin: 15px 0 25px 0;
+        }
     }
 }

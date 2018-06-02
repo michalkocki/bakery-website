@@ -12,8 +12,11 @@
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
 
     <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
     <script src="https://unpkg.com/ionicons@4.0.0/dist/ionicons.js"></script>
     <script src="js/script.js"></script>
 </head>
@@ -42,49 +45,52 @@
         </ul>
     </nav>
 
+    <!-- Arrow down (displayed only on smaller media) -->
+
     <div id="scroll-down">
         <a href="#about">
             <ion-icon name="arrow-down"></ion-icon>
         </a>
     </div>
-
     </div>
-    <div id="about" class="clearfix">
+
+    <!-- Section: Welcome -->
+
+    <section id="about" class="clearfix">
         <div class="about-text">
             <h1>Welcome!</h1>
-            <p>Soufflé danish gingerbread. Gummi bears fruitcake dessert. Caramels cookie chocolate bar jelly muffin marzipan
-                oat cake lemon drops. Tart cookie icing chupa chups. Jujubes bonbon halvah jelly icing candy canes. Fruitcake
-                biscuit chocolate bar macaroon chocolate dessert.</p>
+            <p>The Bakeshop is a small, family-owned business established in Lublin. We craft bakings with natural ingredients
+                only.</p>
         </div>
-    </div>
-    <div id="values-bar" class="clearfix">
+    </section>
+
+    <!-- Section: values -->
+
+    <section id="values-bar" class="clearfix">
         <div class="s-4">
             <div class="infobox">
                 <ion-icon name="heart" class="big-icon"></ion-icon>
 
-                <p>Soufflé danish gingerbread. Gummi bears fruitcake dessert. Caramels cookie chocolate bar jelly muffin marzipan
-                    oat cake lemon drops.</p>
+                <p>We bake with love and passion.</br>That is why our products are always the highest quality.</p>
             </div>
         </div>
         <div class="s-4">
             <div class="infobox">
-                <ion-icon name="leaf" class="big-icon"></ion-icon>
-                <p>Soufflé danish gingerbread. Gummi bears fruitcake dessert. Caramels cookie chocolate bar jelly muffin marzipan
-                    oat cake lemon drops.</p>
+                <ion-icon name="leaf" class="big-icon" ></ion-icon>
+                <p>Naturally natural.</br>Our bakings and pastries consist of ingredients received naturally and from trusted resources. </br> </p>
             </div>
         </div>
         <div class="s-4">
             <div class="infobox">
                 <ion-icon name="home" class="big-icon"></ion-icon>
-                <p>Soufflé danish gingerbread. Gummi bears fruitcake dessert. Caramels cookie chocolate bar jelly muffin marzipan
-                    oat cake lemon drops.</p>
+                <p>Homemade.</br>We believe that it is essential to keep traditions alive, so our recipes were made up almost 50 years ago.</p>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Section: Stores -->
 
-    <div id="stores" class="clearfix">
+    <section id="stores" class="clearfix">
         <h2>Stores</h2>
         <h3>Where you can find
             <span>The Bakeshop</span> stores?</h3>
@@ -150,12 +156,14 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Map popups -->
 
     <div class="popup-wrapper">
         <div class="store-popup">
             <ion-icon name="close-circle" class="color-itself" id="close-map"></ion-icon>
-         
+
             <iframe id="map-warsaw" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d156388.35438371697!2d20.921111435579697!3d52.23306532125446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669a869f01%3A0x72f0be2a88ead3fc!2sWarszawa!5e0!3m2!1spl!2spl!4v1525696531121"
                 width="100%" height="95%" frameborder="0" style="border:0"></iframe>
             <iframe id="map-lublin" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79969.5286943548!2d22.493730562671047!3d51.21819562167822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472257141e154061%3A0x5528ee7af6e8e95f!2sLublin!5e0!3m2!1spl!2spl!4v1525700473381"
@@ -169,19 +177,18 @@
 
     <!-- Section: Order -->
 
-    <div id="order">
+    <section id="order">
         <div class="ordering-info">
             <h2>Order online</h2>
             <h3>The Bakeshop goods delivered everyday. Always fresh!</h3>
-            <p>Gummies apple pie dragée pie. Tiramisu sweet cotton candy jelly beans bear claw cake jujubes cookie sesame snaps.
-                Jelly candy canes gingerbread powder cupcake tart marshmallow.</p>
-            <a href="ordering-form.html" class="button">Let's do it!</a>
+            <p>You can order our products to be delivered to your home daily.</br>Subscription plans are prepared in a way to suit up everyone.</p>
+            <a href="order.html" class="button">Let's do it!</a>
         </div>
-    </div>
+    </section>
 
     <!-- Section: Contact -->
 
-    <div id="contact">
+    <section id="contact">
         <h2>Contact</h2>
         <div class="infobox">
             <form method="POST" action="#">
@@ -195,7 +202,7 @@
                 <button type="submit">Send</button>
             </form>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
 

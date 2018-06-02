@@ -15,6 +15,9 @@ $(document).ready(function () {
     $('#map-lublin').hide();
     $('#map-gdynia').hide();
     $('#map-wroclaw').hide();
+    $('#order-personal-sumup').hide();
+    $('#order-details').hide();
+
 
     $('#close-map').click(function () {
         $('.popup-wrapper').fadeOut(100);
@@ -25,10 +28,14 @@ $(document).ready(function () {
         $('body').removeClass('scroll-lock');
     });
 
+
+
+
     showMapOnClick('#show-warsaw', '#map-warsaw');
     showMapOnClick('#show-lublin', '#map-lublin');
     showMapOnClick('#show-gdynia', '#map-gdynia');
     showMapOnClick('#show-wroclaw', '#map-wroclaw');
+
 
     /* Checking Regex */
 
@@ -37,6 +44,7 @@ $(document).ready(function () {
     let addressRegex = /^[a-zA-ZżźćńółęąśŻŹĆĄŚĘŁÓŃ0-9\s,.'-]{3,}$/;
     let zipRegex = /(\d{2}-\d{3})/;
     let phoneRegex = /\+48 [0-9\s]{11}/;
+
     checkRegex('#name', nameRegex);
     checkRegex('#mail', mailRegex);
     checkRegex('#address', addressRegex);
@@ -59,23 +67,57 @@ function checkRegex(id, regex) {
         if (!$(id).val().match(regex)) {
             $(id).removeClass('valid');
             $(id).addClass('invalid');
-            $('#doneButton').prop("disabled", true);
         } else {
             $(id).removeClass('invalid');
             $(id).addClass('valid');
-            $('#doneButton').prop("disabled", false);
         }
+        var invalidName = $('#name').hasClass("invalid");
+        var invalidMail = $('#mail').hasClass("invalid");
+        var invalidAddress = $('#address').hasClass("invalid");
+        var invalidCity = $('#city').hasClass("invalid");
+        var invalidZip = $('#zip').hasClass("invalid");
+        var invalidNumber = $('#number').hasClass("invalid");
+        if (invalidAddress || invalidCity || invalidMail || invalidName || invalidNumber || invalidZip)
+            $('#doneButton').prop('disabled', true);
+        else $('#doneButton').prop('disabled', false);
+
     });
 }
+
+function submitPersonal() {
+    var name = document.getElementById('name').value;
+    var street = document.getElementById('address').value;
+    var city = document.getElementById('city').value;
+    var zip = document.getElementById('zip').value;
+    var mail = document.getElementById('mail').value;
+    var phone = document.getElementById('number').value;
+    sessionStorage.setItem('userName', name);
+    sessionStorage.setItem('userStreet', street);
+    sessionStorage.setItem('userCity', city);
+    sessionStorage.setItem('userZip', zip);
+    sessionStorage.setItem('userMail', mail);
+    sessionStorage.setItem('userPhone', phone);
+}
+
+
+function fetchToEdit() {
+    document.getElementById('name').value = sessionStorage.getItem('userName');
+    document.getElementById('address').value = sessionStorage.getItem('userStreet');
+    document.getElementById('city').value = sessionStorage.getItem('userCity');
+    document.getElementById('zip').value = sessionStorage.getItem('userZip');
+    document.getElementById('mail').value = sessionStorage.getItem('userMail');
+    document.getElementById('number').value = sessionStorage.getItem('userPhone');
+}
+
 
 /* Formatting input boxes */
 
 var numberFormat = new Cleave('.nr', {
-    blocks: [3,3,3,3],
+    blocks: [3, 3, 3, 3],
     prefix: '+48'
 })
 
 var zipCodeFormat = new Cleave('.zc', {
-    blocks: [2,3],
+    blocks: [2, 3],
     delimiter: '-'
 })

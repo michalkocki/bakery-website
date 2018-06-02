@@ -312,6 +312,7 @@ nav {
 #contact {
   padding-top: 125px; }
 
+/* Custom inputs */
 input[type=email],
 input[type=text] {
   width: 50%;
@@ -347,34 +348,33 @@ footer {
   text-align: center; }
 
 /* Order online page */
-.image-container {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-  .image-container img {
-    width: 80%; }
+.order-container {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../img/hero_img.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  overflow: scroll; }
 
-.ordering-form,
-.ordering-form-goods {
-  width: 50%;
+.logo-image {
+  width: 10%;
+  margin: 0 auto; }
+  .logo-image img {
+    margin: 25px 0; }
+
+.ordering-form {
+  width: 60%;
   margin: 15px auto;
   border: 1px solid #d7d7d7;
   border-radius: 10px;
-  padding: 0;
+  padding: 40px;
   background-color: #e3e3e3; }
-  .ordering-form img,
-  .ordering-form-goods img {
-    width: 20%;
-    margin: 0 auto; }
-  .ordering-form h2:after,
-  .ordering-form-goods h2:after {
+  .ordering-form h2:after {
     margin-bottom: 15px; }
   .ordering-form input[type=text],
   .ordering-form input[type=email],
-  .ordering-form input[type=tel],
-  .ordering-form-goods input[type=text],
-  .ordering-form-goods input[type=email],
-  .ordering-form-goods input[type=tel] {
+  .ordering-form input[type=tel] {
     border: 1px solid #bdbdbd;
     border-radius: 10px;
     margin-bottom: 15px;
@@ -383,13 +383,176 @@ footer {
     width: 100%;
     text-align: left;
     padding: 20px; }
+  .ordering-form button {
+    width: 100%; }
+  .ordering-form span {
+    color: #ff726c; }
+
+select {
+  border: 1px solid #ff726c;
+  background-color: transparent;
+  color: #3d3d3d;
+  font-size: 1rem;
+  font-weight: 300;
+  width: 100%;
+  text-align: left; }
+
+.selected-plan {
+  width: 100%;
+  border: 1px solid #ff726c;
+  margin: 50px 0;
+  border-radius: 10px;
+  background: #ffd4d2;
+  color: #ff726c; }
+
+.selected-plan-header {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 20px 0;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  background: #ff726c;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #f0f0f0; }
+
+.selected-plan-description {
+  padding: 20px; }
+  .selected-plan-description p {
+    color: #3d3d3d;
+    margin: 0;
+    text-align: center; }
+  .selected-plan-description ul {
+    text-align: center; }
+  .selected-plan-description li {
+    display: inline-block;
+    margin: 10px 25px;
+    color: #3d3d3d; }
+    .selected-plan-description li ion-icon {
+      font-size: 0.9rem;
+      color: #ff726c;
+      margin-right: 10px; }
+
+.selected-plan-price {
+  border-top: 1px solid #ff726c;
+  padding: 20px;
+  color: #3d3d3d;
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center; }
+  .selected-plan-price span {
+    color: #ff726c;
+    font-size: 1.5rem; }
+
+#starter-selected .selected-plan-header {
+  color: #c23616; }
+
+#premium-selected .selected-plan-header {
+  color: #192a56; }
 
 .valid {
   color: #44bd32; }
 
 .invalid {
-  color: #e84118;
-  font-weight: bold; }
+  color: #e84118; }
+
+.inputGroup {
+  background-color: transparent;
+  display: block;
+  margin: 10px 0;
+  position: relative; }
+  .inputGroup label {
+    padding: 12px 30px;
+    width: 100%;
+    display: block;
+    text-align: left;
+    color: #3C454C;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 200ms ease-in;
+    overflow: hidden; }
+    .inputGroup label:before {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      content: '';
+      background-color: #ff726c;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale3d(1, 1, 1);
+      transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      z-index: -1; }
+    .inputGroup label:after {
+      width: 32px;
+      height: 32px;
+      content: '';
+      border: 2px solid #ff726c;
+      background-color: transparent;
+      background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+      background-repeat: no-repeat;
+      background-position: 2px 3px;
+      border-radius: 50%;
+      z-index: 2;
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      transition: all 200ms ease-in; }
+  .inputGroup input:checked ~ label {
+    color: #f0f0f0; }
+    .inputGroup input:checked ~ label:before {
+      transform: translate(-50%, -50%) scale3d(56, 56, 1);
+      opacity: 1; }
+    .inputGroup input:checked ~ label:after {
+      background-color: #3d3d3d;
+      border-color: #3d3d3d; }
+  .inputGroup input {
+    width: 32px;
+    height: 32px;
+    order: 1;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    visibility: hidden; }
+
+#prompt-container {
+  background-color: rgba(255, 255, 255, 0.705);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 3; }
+
+#prompt {
+  text-align: center;
+  background-color: #f0f0f0;
+  border: 2px solid #ff726c;
+  border-radius: 20px;
+  position: fixed;
+  padding: 50px;
+  width: 50%;
+  margin: 10px auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.card-list {
+  width: 100%;
+  margin: 20px auto;
+  padding: 0;
+  text-align: center; }
+  .card-list li {
+    display: inline;
+    margin: 0 5px; }
+    .card-list li img {
+      width: 8%; }
 
 /* Responsive Web Design */
 @media only screen and (max-width: 768px) {
@@ -442,12 +605,25 @@ footer {
   textarea {
     width: 90%; }
 
+  .logo-image {
+    width: 40%; }
+
   .ordering-form {
     width: 95%;
     padding: 10px; }
-    .ordering-form img {
-      width: 50%; }
     .ordering-form h2 {
-      margin: 15px 0 25px 0; } }
+      margin: 15px 0 25px 0; }
+
+  .selected-plan-description li {
+    display: block;
+    margin: 5px; }
+  .selected-plan-description ul {
+    padding: 0; }
+
+  #prompt {
+    width: 95%; }
+
+  .card-list img {
+    width: 15%; } }
 
 /*# sourceMappingURL=style.css.map */

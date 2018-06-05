@@ -6,18 +6,17 @@
     <meta charset="utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link href="css/aos.css" rel="stylesheet">
 
+    <script src="js/aos.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="https://unpkg.com/ionicons@4.0.0/dist/ionicons.js"></script>
     <script src="js/cleave.min.js"></script>
-
-
 </head>
 
 <body onload="fetchToEdit()">
@@ -32,30 +31,30 @@
 
             <h2>Personal information</h2>
             <form method="POST" action="order-details.html">
-                <label for="name">
-                    <h4>Full name</h4>
+                <label class="small-title" for="name">
+                    Full name
                 </label>
-                <input type="text" id="name" placeholder="John Appleseed" required/>
-                <label for="address">
-                    <h4>Street</h4>
+                <input type="text" id="name" placeholder="John Appleseed" title="Fill in your name." required/>
+                <label class="small-title" for="address">
+                    Street
                 </label>
-                <input type="text" id="address" placeholder="Infinite Loop" required/>
-                <label for="city">
-                    <h4>City</h4>
+                <input type="text" id="address" placeholder="Infinite Loop" title="Fill in your address." required/>
+                <label class="small-title" for="city">
+                    City
                 </label>
-                <input type="text" id="city" placeholder="San Francisco" required/>
-                <label for="zip">
-                    <h4>Zip Code</h4>
+                <input type="text" id="city" placeholder="San Francisco" title="Fill in your city." required/>
+                <label class="small-title" for="zip">
+                    Zip Code
                 </label>
-                <input type="text" id="zip" class="zc" placeholder="00-000" required/>
-                <label for="mail">
-                    <h4>Mail</h4>
+                <input type="text" id="zip" class="zc" placeholder="00-000" title="Fill in your ZIP code." required/>
+                <label class="small-title" for="mail">
+                    Mail
                 </label>
-                <input type="email" id="mail" placeholder="example@mail.com" required/>
-                <label for="number">
-                    <h4>Phone number</h4>
+                <input type="email" id="mail" placeholder="example@mail.com" title="Fill in your mail." required/>
+                <label class="small-title" for="number">
+                    Phone number
                 </label>
-                <input type="text" id="number" class="nr" placeholder="000 000 000" required/>
+                <input type="text" id="number" class="nr" placeholder="000 000 000" title="Fill in your phone number." required/>
                 <button onclick="submitPersonal()" id="doneButton">Next!
                 </button>
             </form>

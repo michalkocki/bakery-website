@@ -6,13 +6,15 @@ $navy: #302f46;
 $pink: #ff726c;
 $paddingTop: 125px;
 html {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit;
 }
 
 body {
@@ -57,6 +59,7 @@ button,
     border-radius: 10px;
     padding: 10px;
     background: transparent;
+    -webkit-transition: all 0.2s;
     transition: all 0.2s;
 }
 
@@ -79,6 +82,7 @@ button:disabled {
     cursor: pointer;
     display: inline-block;
     font-size: 1.5rem;
+    -webkit-transition: 0.3s all ease-in-out;
     transition: 0.3s all ease-in-out;
 }
 
@@ -102,16 +106,24 @@ h2 {
     margin-bottom: 50px;
 }
 
-h2:after {
+h2:after,
+.line:after {
     display: block;
     content: " ";
     width: 50%;
     height: 1px;
     background: $pink;
+}
+
+h2:after {
     margin: 25px auto 125px auto;
 }
 
-h4 {
+.line:after {
+    margin: 25px auto;
+}
+
+.small-title {
     font-size: 0.7rem;
     font-weight: 800;
     margin: 1% 2%;
@@ -131,13 +143,20 @@ h4 {
     visibility: hidden;
 }
 
+iframe {
+    border: 0;
+    width: 100%;
+    height: 95%;
+}
+
 /* Navbar */
 
 nav {
     position: fixed;
     width: 100%;
     background: darken($navy, 10%);
-    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
     top: 0;
     left: 0;
     z-index: 1;
@@ -161,6 +180,7 @@ nav {
         a:link,
         a:visited {
             color: $light;
+            -webkit-transition: all 0.2s ease-in-out;
             transition: all 0.2s ease-in-out;
         }
         a:active,
@@ -181,17 +201,29 @@ nav {
     z-index: 3;
 }
 
+.section-start {
+    padding-top: $paddingTop;
+    text-align: center;
+}
+
 /* Section: About */
 
 #about {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0.9))), url('../img/hero_img.jpg');
     background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.9)), url('../img/hero_img.jpg');
     background-position: center;
     background-size: cover;
     height: 100vh;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .about-text {
@@ -231,8 +263,6 @@ nav {
 
 #stores {
     background: darken($light, 5%);
-    text-align: center;
-    padding-top: $paddingTop;
     span {
         color: darken($pink, 10%);
     }
@@ -257,7 +287,8 @@ nav {
     background: rgba(0, 0, 0, 0.6);
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     z-index: 2;
 }
 
@@ -272,7 +303,8 @@ nav {
     margin: auto;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     z-index: 2;
     ion-icon {
         margin-bottom: 10px;
@@ -294,6 +326,7 @@ nav {
     255,
     0.6);
     opacity: 0;
+    -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 
@@ -363,13 +396,9 @@ nav {
 
 /* Section: Order */
 
-#order {
-    text-align: center;
-    padding-top: $paddingTop;
-}
-
 .ordering-info {
     width: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.85)), to(rgba(255, 255, 255, 0.85))), url('../img/window.jpg');
     background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('../img/window.jpg');
     background-attachment: fixed;
     background-size: cover;
@@ -377,10 +406,45 @@ nav {
     color: $dark;
 }
 
-/* Section: Contact */
+/* Section: Opinions */
 
-#contact {
-    padding-top: $paddingTop;
+.client-wrapper {
+    padding: 50px 0;
+}
+
+.client {
+    padding: 10px;
+    border: 2px solid $dark;
+    background: -webkit-gradient(linear, left top, left bottom, from(#262537), to(#302f46));
+    background: linear-gradient(#262537, #302f46);
+    border-radius: 20px;
+    width: 80%;
+    margin: 0 auto;
+    color: $light;
+    -webkit-box-shadow: 0px 7px 53px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 7px 53px 1px rgba(0, 0, 0, 0.75);
+    img {
+        width: 100px;
+        border-radius: 100px;
+        border: 3px solid $pink;
+        margin: 20px auto 5px auto;
+    }
+}
+
+.client-name {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+    color: $pink;
+    margin: 10px auto;
+}
+
+.client-quote {
+    font-size: 1rem;
+    padding: 10px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 30px;
 }
 
 /* Custom inputs */
@@ -423,11 +487,38 @@ footer {
     text-align: center;
 }
 
+.social-links {
+    font-size: 2.5rem;
+    margin: 50px auto;
+    padding: 0;
+    li {
+        display: inline;
+        ion-icon {
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            color: $dark;
+        }
+        ion-icon[name=logo-facebook]:hover {
+            color: #3b5998;
+            cursor: pointer;
+        }
+        ion-icon[name=logo-instagram]:hover {
+            color: #d62976;
+            cursor: pointer;
+        }
+        ion-icon[name=logo-rss]:hover {
+            color: 	#e7630c;
+            cursor: pointer;
+        }
+    }
+}
+
 /* Order online page */
 
 .order-container {
     width: 100%;
     height: 100vh;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.5))), url(../img/hero_img.jpg);
     background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../img/hero_img.jpg);
     background-attachment: fixed;
     background-size: cover;
@@ -574,6 +665,7 @@ select {
         cursor: pointer;
         position: relative;
         z-index: 2;
+        -webkit-transition: color 200ms ease-in;
         transition: color 200ms ease-in;
         overflow: hidden;
         &:before {
@@ -585,7 +677,9 @@ select {
             position: absolute;
             left: 50%;
             top: 50%;
-            transform: translate(-50%, -50%) scale3d(1, 1, 1);
+            -webkit-transform: translate(-50%, -50%) scale3d(1, 1, 1);
+                    transform: translate(-50%, -50%) scale3d(1, 1, 1);
+            -webkit-transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
             transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
             opacity: 0;
             z-index: -1;
@@ -604,15 +698,18 @@ select {
             position: absolute;
             right: 30px;
             top: 50%;
-            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+                    transform: translateY(-50%);
             cursor: pointer;
+            -webkit-transition: all 200ms ease-in;
             transition: all 200ms ease-in;
         }
     }
     input:checked~label {
         color: $light;
         &:before {
-            transform: translate(-50%, -50%) scale3d(56, 56, 1);
+            -webkit-transform: translate(-50%, -50%) scale3d(56, 56, 1);
+                    transform: translate(-50%, -50%) scale3d(56, 56, 1);
             opacity: 1;
         }
         &:after {
@@ -623,12 +720,15 @@ select {
     input {
         width: 32px;
         height: 32px;
-        order: 1;
+        -webkit-box-ordinal-group: 2;
+            -ms-flex-order: 1;
+                order: 1;
         z-index: 2;
         position: absolute;
         right: 30px;
         top: 50%;
-        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
         cursor: pointer;
         visibility: hidden;
     }
@@ -653,15 +753,14 @@ select {
     margin: 10px auto;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 }
 
 .card-list {
-   width: 100%;
-   margin: 20px auto;
- 
-       padding: 0;
-   
+    width: 100%;
+    margin: 20px auto;
+    padding: 0;
     text-align: center;
     li {
         display: inline;
@@ -670,16 +769,19 @@ select {
             width: 8%;
         }
     }
-    
 }
 
 /* Responsive Web Design */
 
 @media only screen and (max-width: 768px) {
     nav {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         height: 100vh;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         position: relative;
         margin: 0;
         ul {
